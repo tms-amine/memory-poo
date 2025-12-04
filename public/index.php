@@ -50,11 +50,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $attempts = $state['attempts'] ?? 0;
                     $timeSeconds = $game->getElapsedTime();
 
-                    $query = "INSERT INTO scores (player_name, attempts, time_seconds)
-                              VALUES (:name, :attempts, :time)";
+                    $query = "INSERT INTO scores (player_name, score, attempts, time_seconds)
+                              VALUES (:name, :score, :attempts, :time)";
                     $stmt = $conn->prepare($query);
                     $stmt->execute([
                         ':name'     => $playerName,
+                        ':score'    => $attempts,
                         ':attempts' => $attempts,
                         ':time'     => $timeSeconds,
                     ]);
