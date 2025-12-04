@@ -1,0 +1,229 @@
+/* Light football theme - friendly and readable */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    background: linear-gradient(180deg, #eaf7ea 0%, #dff3df 100%);
+    color: #0b2f1a;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(11, 47, 26, 0.06);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.header h1 {
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    font-size: 28px;
+    color: #0b3d1b
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    align-items: center
+}
+
+/* Navigation bar */
+.nav {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    justify-content: center
+}
+
+.nav a {
+    padding: 8px 14px;
+    background: transparent;
+    color: #0b3d1b;
+    text-decoration: none;
+    border: 1px solid #cfe9d6;
+    border-radius: 6px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px
+}
+
+.nav a:hover {
+    background: #e6f6ea
+}
+
+.nav a.active {
+    background: #d8f0dd;
+    color: #06421a;
+    border-color: #bfe6c7
+}
+
+/* Sticky navbar */
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 10px rgba(11, 47, 26, 0.06)
+}
+
+/* Avoid content under sticky nav */
+.container {
+    padding-top: 86px
+}
+
+/* Pseudo input */
+#player_pseudo {
+    padding: 8px;
+    border: 1px solid #cfe9d6;
+    background: #f6fff7;
+    color: #0b3d1b;
+    font-weight: 600;
+    border-radius: 6px
+}
+
+/* Board */
+.board {
+    display: grid;
+    grid-template-columns: repeat(5, 120px);
+    gap: 16px;
+    justify-content: center;
+    margin-top: 18px
+}
+
+.board form {
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    width: 120px;
+    height: 120px;
+    background: #ffffff;
+    border: 2px solid #d7ecd9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    cursor: pointer;
+    color: #0b3d1b;
+    font-weight: 800;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(11, 47, 26, 0.04);
+    padding: 0;
+    font-family: inherit;
+}
+
+.card:hover {
+    background: #f6fff7;
+    border-color: #bfe6c7;
+}
+
+.card:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.card .inner {
+    display: none
+}
+
+.card.flipped .inner {
+    display: block
+}
+
+.card.matched {
+    background: #ffd66b;
+    color: #1a1a1a;
+    border-color: #ffd66b;
+    cursor: not-allowed;
+}
+
+.card.matched:hover {
+    background: #ffd66b;
+}
+
+.stats {
+    display: flex;
+    gap: 18px;
+    margin-top: 12px;
+    font-weight: 700;
+    color: #0b3d1b
+}
+
+.timer {
+    color: #0b7b2d
+}
+
+.footer {
+    text-align: center;
+    margin-top: 18px
+}
+
+input[type="number"],
+select,
+button {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #d7ecd9;
+    background: #f6fff7;
+    color: #0b3d1b
+}
+
+button.primary {
+    background: #0b6b33;
+    border: 0;
+    color: #fff;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-weight: 800;
+    border-radius: 6px
+}
+
+.leaderboard {
+    background: #ffffff;
+    padding: 12px;
+    margin-top: 16px;
+    border-left: 4px solid #d7ecd9;
+    color: #0b3d1b;
+    border-radius: 8px
+}
+
+.leaderboard table {
+    width: 100%;
+    border-collapse: collapse
+}
+
+.leaderboard th {
+    background: #f1fff4;
+    color: #0b3d1b;
+    padding: 8px;
+    text-align: left
+}
+
+.leaderboard td {
+    padding: 8px;
+    border-top: 1px solid #eef7ef
+}
+
+@media(max-width:760px) {
+    .board {
+        grid-template-columns: repeat(3, 100px)
+    }
+
+    .card {
+        width: 100px;
+        height: 100px
+    }
+}
