@@ -1,5 +1,5 @@
 <?php
-// public/save_score.php
+
 require_once __DIR__ . '/../src/Database.php';
 
 header('Content-Type: application/json; charset=utf-8');

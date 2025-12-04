@@ -1,5 +1,5 @@
 <?php
-// public/info.php
+
 ?>
 <!doctype html>
 <html lang="fr">
