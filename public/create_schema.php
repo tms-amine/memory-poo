@@ -1,5 +1,5 @@
 <?php
-// public/create_schema.php
+
 require_once __DIR__ . '/../src/Database.php';
 
 header('Content-Type: text/html; charset=utf-8');
